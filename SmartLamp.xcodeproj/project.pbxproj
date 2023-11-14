@@ -7,23 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A46DD28C2AF81D0500710E0A /* LampStateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46DD28B2AF81D0500710E0A /* LampStateDataModel.swift */; };
 		A493E7192AC3154B00EF087B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E7182AC3154B00EF087B /* AppDelegate.swift */; };
 		A493E71B2AC3154B00EF087B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E71A2AC3154B00EF087B /* SceneDelegate.swift */; };
-		A493E71D2AC3154B00EF087B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E71C2AC3154B00EF087B /* ViewController.swift */; };
-		A493E7202AC3154B00EF087B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A493E71E2AC3154B00EF087B /* Main.storyboard */; };
 		A493E7222AC3154C00EF087B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A493E7212AC3154C00EF087B /* Assets.xcassets */; };
 		A493E7252AC3154C00EF087B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A493E7232AC3154C00EF087B /* LaunchScreen.storyboard */; };
+		A493E72D2AC316D600EF087B /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E72C2AC316D600EF087B /* CustomTabBarViewController.swift */; };
+		A493E72F2AC31F3100EF087B /* StartAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E72E2AC31F3100EF087B /* StartAnimationViewController.swift */; };
+		A493E7312AC323CE00EF087B /* ManagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E7302AC323CE00EF087B /* ManagingViewController.swift */; };
+		A493E7332AC323DB00EF087B /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E7322AC323DB00EF087B /* ConnectionViewController.swift */; };
+		A493E7362AC32B8B00EF087B /* TextAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E7352AC32B8B00EF087B /* TextAppearance.swift */; };
+		A493E73F2AC337CA00EF087B /* ManagingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E73E2AC337CA00EF087B /* ManagingTableViewCell.swift */; };
+		A493E7412AC33E2600EF087B /* ManagingTableFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E7402AC33E2600EF087B /* ManagingTableFunctions.swift */; };
+		A493E7432AC346C000EF087B /* PossibleDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E7422AC346C000EF087B /* PossibleDevices.swift */; };
+		A493E7462AC359E600EF087B /* BLEProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E7452AC359E600EF087B /* BLEProvider.swift */; };
+		A493E7482AC35A0F00EF087B /* ForSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E7472AC35A0F00EF087B /* ForSets.swift */; };
+		A493E74E2AC35B0600EF087B /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E74D2AC35B0600EF087B /* ConnectionTableViewCell.swift */; };
+		A493E7502AC35B6400EF087B /* ConnectionTableFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E74F2AC35B6400EF087B /* ConnectionTableFunctions.swift */; };
+		A493E7522AC3648700EF087B /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E7512AC3648700EF087B /* Device.swift */; };
+		A493E7582AC3A04900EF087B /* ConnectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E7572AC3A04900EF087B /* ConnectionProtocols.swift */; };
+		A49413FD2AFABC66006C7CF5 /* CALayerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49413FC2AFABC66006C7CF5 /* CALayerAnimation.swift */; };
+		A4B055142AF658A100C15603 /* TimerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B055132AF658A100C15603 /* TimerPopUpViewController.swift */; };
+		A4BE3A7A2AF2A7B6007B0777 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE3A792AF2A7B6007B0777 /* MainViewController.swift */; };
+		A4BE3A7D2AF2E273007B0777 /* ButtonAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE3A7C2AF2E273007B0777 /* ButtonAnimations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A46DD28B2AF81D0500710E0A /* LampStateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LampStateDataModel.swift; sourceTree = "<group>"; };
 		A493E7152AC3154B00EF087B /* SmartLamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartLamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A493E7182AC3154B00EF087B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A493E71A2AC3154B00EF087B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A493E71C2AC3154B00EF087B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A493E71F2AC3154B00EF087B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A493E7212AC3154C00EF087B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A493E7242AC3154C00EF087B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A493E7262AC3154C00EF087B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A493E72C2AC316D600EF087B /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		A493E72E2AC31F3100EF087B /* StartAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAnimationViewController.swift; sourceTree = "<group>"; };
+		A493E7302AC323CE00EF087B /* ManagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagingViewController.swift; sourceTree = "<group>"; };
+		A493E7322AC323DB00EF087B /* ConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
+		A493E7352AC32B8B00EF087B /* TextAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAppearance.swift; sourceTree = "<group>"; };
+		A493E73E2AC337CA00EF087B /* ManagingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagingTableViewCell.swift; sourceTree = "<group>"; };
+		A493E7402AC33E2600EF087B /* ManagingTableFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagingTableFunctions.swift; sourceTree = "<group>"; };
+		A493E7422AC346C000EF087B /* PossibleDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PossibleDevices.swift; sourceTree = "<group>"; };
+		A493E7452AC359E600EF087B /* BLEProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEProvider.swift; sourceTree = "<group>"; };
+		A493E7472AC35A0F00EF087B /* ForSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForSets.swift; sourceTree = "<group>"; };
+		A493E74D2AC35B0600EF087B /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
+		A493E74F2AC35B6400EF087B /* ConnectionTableFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTableFunctions.swift; sourceTree = "<group>"; };
+		A493E7512AC3648700EF087B /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		A493E7572AC3A04900EF087B /* ConnectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionProtocols.swift; sourceTree = "<group>"; };
+		A49413FC2AFABC66006C7CF5 /* CALayerAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerAnimation.swift; sourceTree = "<group>"; };
+		A4B055132AF658A100C15603 /* TimerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPopUpViewController.swift; sourceTree = "<group>"; };
+		A4BE3A792AF2A7B6007B0777 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A4BE3A7C2AF2E273007B0777 /* ButtonAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +92,126 @@
 			children = (
 				A493E7182AC3154B00EF087B /* AppDelegate.swift */,
 				A493E71A2AC3154B00EF087B /* SceneDelegate.swift */,
-				A493E71C2AC3154B00EF087B /* ViewController.swift */,
-				A493E71E2AC3154B00EF087B /* Main.storyboard */,
-				A493E7212AC3154C00EF087B /* Assets.xcassets */,
-				A493E7232AC3154C00EF087B /* LaunchScreen.storyboard */,
+				A493E72C2AC316D600EF087B /* CustomTabBarViewController.swift */,
+				A493E7442AC359D500EF087B /* BLE */,
+				A4BE3A782AF2A790007B0777 /* MainScreen */,
+				A493E7492AC35AA400EF087B /* Connection */,
+				A493E7382AC3370000EF087B /* Managing */,
+				A493E7372AC3349A00EF087B /* LoadingNLaunch */,
+				A493E7342AC32B5600EF087B /* Extensions */,
 				A493E7262AC3154C00EF087B /* Info.plist */,
 			);
 			path = SmartLamp;
+			sourceTree = "<group>";
+		};
+		A493E7342AC32B5600EF087B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A493E7352AC32B8B00EF087B /* TextAppearance.swift */,
+				A493E7472AC35A0F00EF087B /* ForSets.swift */,
+				A4BE3A7C2AF2E273007B0777 /* ButtonAnimations.swift */,
+				A49413FC2AFABC66006C7CF5 /* CALayerAnimation.swift */,
+				A493E7212AC3154C00EF087B /* Assets.xcassets */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A493E7372AC3349A00EF087B /* LoadingNLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				A493E7232AC3154C00EF087B /* LaunchScreen.storyboard */,
+				A493E72E2AC31F3100EF087B /* StartAnimationViewController.swift */,
+			);
+			path = LoadingNLaunch;
+			sourceTree = "<group>";
+		};
+		A493E7382AC3370000EF087B /* Managing */ = {
+			isa = PBXGroup;
+			children = (
+				A493E73B2AC3371D00EF087B /* View */,
+				A493E7392AC3370900EF087B /* Controller */,
+				A493E73A2AC3371100EF087B /* Models */,
+			);
+			path = Managing;
+			sourceTree = "<group>";
+		};
+		A493E7392AC3370900EF087B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A493E7302AC323CE00EF087B /* ManagingViewController.swift */,
+				A493E7402AC33E2600EF087B /* ManagingTableFunctions.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A493E73A2AC3371100EF087B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A493E7422AC346C000EF087B /* PossibleDevices.swift */,
+				A493E7512AC3648700EF087B /* Device.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A493E73B2AC3371D00EF087B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A493E73E2AC337CA00EF087B /* ManagingTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A493E7442AC359D500EF087B /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				A493E7452AC359E600EF087B /* BLEProvider.swift */,
+				A46DD28B2AF81D0500710E0A /* LampStateDataModel.swift */,
+			);
+			path = BLE;
+			sourceTree = "<group>";
+		};
+		A493E7492AC35AA400EF087B /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				A493E74C2AC35AD300EF087B /* Controller */,
+				A493E74B2AC35ACA00EF087B /* Model */,
+				A493E74A2AC35AC200EF087B /* View */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		A493E74A2AC35AC200EF087B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A493E74D2AC35B0600EF087B /* ConnectionTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A493E74B2AC35ACA00EF087B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A493E7572AC3A04900EF087B /* ConnectionProtocols.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A493E74C2AC35AD300EF087B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A493E7322AC323DB00EF087B /* ConnectionViewController.swift */,
+				A493E74F2AC35B6400EF087B /* ConnectionTableFunctions.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4BE3A782AF2A790007B0777 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE3A792AF2A7B6007B0777 /* MainViewController.swift */,
+				A4B055132AF658A100C15603 /* TimerPopUpViewController.swift */,
+			);
+			path = MainScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +274,6 @@
 			files = (
 				A493E7252AC3154C00EF087B /* LaunchScreen.storyboard in Resources */,
 				A493E7222AC3154C00EF087B /* Assets.xcassets in Resources */,
-				A493E7202AC3154B00EF087B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +284,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A493E71D2AC3154B00EF087B /* ViewController.swift in Sources */,
+				A493E7432AC346C000EF087B /* PossibleDevices.swift in Sources */,
+				A493E73F2AC337CA00EF087B /* ManagingTableViewCell.swift in Sources */,
+				A493E7482AC35A0F00EF087B /* ForSets.swift in Sources */,
+				A46DD28C2AF81D0500710E0A /* LampStateDataModel.swift in Sources */,
+				A493E7582AC3A04900EF087B /* ConnectionProtocols.swift in Sources */,
+				A4BE3A7D2AF2E273007B0777 /* ButtonAnimations.swift in Sources */,
+				A493E7462AC359E600EF087B /* BLEProvider.swift in Sources */,
+				A493E7312AC323CE00EF087B /* ManagingViewController.swift in Sources */,
+				A4B055142AF658A100C15603 /* TimerPopUpViewController.swift in Sources */,
+				A493E72F2AC31F3100EF087B /* StartAnimationViewController.swift in Sources */,
+				A493E7332AC323DB00EF087B /* ConnectionViewController.swift in Sources */,
+				A493E7362AC32B8B00EF087B /* TextAppearance.swift in Sources */,
 				A493E7192AC3154B00EF087B /* AppDelegate.swift in Sources */,
+				A493E7522AC3648700EF087B /* Device.swift in Sources */,
+				A493E7412AC33E2600EF087B /* ManagingTableFunctions.swift in Sources */,
+				A493E72D2AC316D600EF087B /* CustomTabBarViewController.swift in Sources */,
+				A493E74E2AC35B0600EF087B /* ConnectionTableViewCell.swift in Sources */,
+				A4BE3A7A2AF2A7B6007B0777 /* MainViewController.swift in Sources */,
+				A49413FD2AFABC66006C7CF5 /* CALayerAnimation.swift in Sources */,
+				A493E7502AC35B6400EF087B /* ConnectionTableFunctions.swift in Sources */,
 				A493E71B2AC3154B00EF087B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +311,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A493E71E2AC3154B00EF087B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A493E71F2AC3154B00EF087B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A493E7232AC3154C00EF087B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,21 +446,25 @@
 				DEVELOPMENT_TEAM = B22MD3V3UZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SmartLamp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = kduk.SmartLamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -318,21 +478,25 @@
 				DEVELOPMENT_TEAM = B22MD3V3UZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SmartLamp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = kduk.SmartLamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
