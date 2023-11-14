@@ -127,8 +127,6 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     private func centralManager(central: CBCentralManager!,
                                 didDisconnect peripheral: CBPeripheral!,
                                 error: NSError!) {
-        let delegate: Connecttions = ConnectionViewController()
-        delegate.reload()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"),
                                         object: nil)
         print("disconnect")
@@ -167,7 +165,6 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
                 UserDefaults.standard.set(data3,
                                           forKey: "currentCycle")
             }
-            
             switch welcome?.state {
             case 0: notificationCenter.post(name: NSNotification.Name(rawValue: "settedOff\(peripheralName)"),
                                             object: nil)
@@ -201,9 +198,6 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
             }
         }
     }
-    
-    
-    
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         for service in peripheral.services! {
             if service.uuid == serviceCDUUID {
@@ -211,7 +205,6 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
             }
         }
     }
-    
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         if let characteristics = service.characteristics {
             for characteristic in characteristics {
@@ -226,7 +219,6 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     }
     
     // MARK: OTHER MANAGER's FUNCS
-    
     func scanCompleted(completion: @escaping ([CBPeripheral]) -> Void) {
         if manager.state == .poweredOn {
             self.manager.stopScan() // in case we've already start scaning
@@ -283,7 +275,6 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"),
                                         object: nil)
     }
-    
     func disconnect(item: CBPeripheral) {
         self.manager.cancelPeripheralConnection(item)
         doNotConnect.insert(item)
@@ -342,7 +333,6 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
             complition(false)
         }
     }
-    
     func resumeLamp(peripheral: CBPeripheral,
                     complition: @escaping (Bool) -> Void) {
         if ((mainCharacteristic?.isNotifying) != nil) {
@@ -375,7 +365,6 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
             complition(false)
         }
     }
-    
     func checkState(_ peripheral: CBPeripheral) {
         if mainCharacteristic != nil {
             peripheral.readValue(for: mainCharacteristic!)
@@ -383,8 +372,3 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     }
 }
 
-extension CBPeripheral: Encodable {
-    public func encode(to encoder: Encoder) throws {
-        
-    }
-}

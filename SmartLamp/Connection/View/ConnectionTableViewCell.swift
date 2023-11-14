@@ -18,7 +18,6 @@ final class ConnectionTableViewCell: UITableViewCell {
         let name = UILabel()
         name.font = UIFont(name: "Futura Bold",
                            size: 15)
-//        name.textColor = .link
         name.textAlignment = .left
         return name
     }()
@@ -96,15 +95,8 @@ final class ConnectionTableViewCell: UITableViewCell {
         changeDeviceNameButton.addTarget(self, action: #selector(disconnect), for: .touchUpInside)
     }
     @objc func disconnect() {
-        if item.state == .connected {
-//            delegate.disconnect(item: item)
-//            changeDeviceNameButton.setImage(UIImage(systemName: "phone.connection"),
-//                                                  for: .normal)
-        }
-        else {
             delegate.connect(item: item)
             changeDeviceNameButton.setImage(UIImage(systemName: "phone.connection"),
                                                   for: .normal)
-        }
     }
 }

@@ -29,7 +29,6 @@
 		A49413FD2AFABC66006C7CF5 /* CALayerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49413FC2AFABC66006C7CF5 /* CALayerAnimation.swift */; };
 		A4B055142AF658A100C15603 /* TimerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B055132AF658A100C15603 /* TimerPopUpViewController.swift */; };
 		A4BE3A7A2AF2A7B6007B0777 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE3A792AF2A7B6007B0777 /* MainViewController.swift */; };
-		A4BE3A7D2AF2E273007B0777 /* ButtonAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE3A7C2AF2E273007B0777 /* ButtonAnimations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +56,6 @@
 		A49413FC2AFABC66006C7CF5 /* CALayerAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerAnimation.swift; sourceTree = "<group>"; };
 		A4B055132AF658A100C15603 /* TimerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPopUpViewController.swift; sourceTree = "<group>"; };
 		A4BE3A792AF2A7B6007B0777 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		A4BE3A7C2AF2E273007B0777 /* ButtonAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +107,6 @@
 			children = (
 				A493E7352AC32B8B00EF087B /* TextAppearance.swift */,
 				A493E7472AC35A0F00EF087B /* ForSets.swift */,
-				A4BE3A7C2AF2E273007B0777 /* ButtonAnimations.swift */,
 				A49413FC2AFABC66006C7CF5 /* CALayerAnimation.swift */,
 				A493E7212AC3154C00EF087B /* Assets.xcassets */,
 			);
@@ -289,7 +286,6 @@
 				A493E7482AC35A0F00EF087B /* ForSets.swift in Sources */,
 				A46DD28C2AF81D0500710E0A /* LampStateDataModel.swift in Sources */,
 				A493E7582AC3A04900EF087B /* ConnectionProtocols.swift in Sources */,
-				A4BE3A7D2AF2E273007B0777 /* ButtonAnimations.swift in Sources */,
 				A493E7462AC359E600EF087B /* BLEProvider.swift in Sources */,
 				A493E7312AC323CE00EF087B /* ManagingViewController.swift in Sources */,
 				A4B055142AF658A100C15603 /* TimerPopUpViewController.swift in Sources */,

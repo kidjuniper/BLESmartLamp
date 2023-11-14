@@ -13,7 +13,5 @@ protocol Forget {
     func forget(item: CBPeripheral)
 }
 protocol Connecttions {
-    func disconnect(item: CBPeripheral)
     func connect(item: CBPeripheral)
-    func reload() // for table view
 }

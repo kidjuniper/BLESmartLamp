@@ -8,8 +8,7 @@
 import Foundation
 import UIKit    
 
-extension CALayer
-   {
+extension CALayer {
        func pauseAnimation() {
            if isPaused() == false {
                let pausedTime = convertTime(CACurrentMediaTime(), from: nil)

@@ -188,10 +188,7 @@ class TimerPopUpViewController: UIViewController {
             self.dismiss(animated: false)
             BLE.sharedInstance.startLamp(peripheral: self.device!,
                                          time: self.minutesPicker.selectedRow(inComponent: 0) % 60 * 1000 * 60 + self.secondsPicker.selectedRow(inComponent: 0) % 60 * 1000,
-                                         cycles: self.cyclesPicker.selectedRow(inComponent: 0) + 1) { real in
-                if real {
-                    
-                }
+                                         cycles: self.cyclesPicker.selectedRow(inComponent: 0) + 1) { _ in
             }
         }
     }

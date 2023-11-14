@@ -19,14 +19,11 @@ final class ManagingTableViewCell: UITableViewCell {
         let name = UILabel()
         name.font = UIFont(name: "Futura Bold",
                            size: 15)
-//        name.textColor = .link
         name.textAlignment = .left
         return name
     }()
     public let changeDeviceNameButton: UIButton = {
         let button = UIButton()
-//        button.setImage(UIImage(systemName: "pencil"),
-//                        for: .normal)
         button.tintColor = .link
         return button
     }()
