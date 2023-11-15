@@ -14,15 +14,15 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" id="TGg-YS-Ktv">
-                                <rect key="frame" x="146" y="326" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGg-YS-Ktv">
+                                <rect key="frame" x="147" y="326" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="jTi-K3-gE2"/>
+                                    <constraint firstAttribute="height" constant="100" id="GO8-lL-w8r"/>
+                                    <constraint firstAttribute="width" constant="100" id="hf1-B7-H0d"/>
                                 </constraints>
                                 <imageReference key="image" image="hexagon" catalog="system" symbolScale="default"/>
                             </imageView>
@@ -30,8 +30,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TGg-YS-Ktv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="-40" id="b7a-ye-hg2"/>
-                            <constraint firstItem="TGg-YS-Ktv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="zfX-SO-eL6"/>
+                            <constraint firstItem="TGg-YS-Ktv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7tr-Zf-Yzc"/>
+                            <constraint firstItem="TGg-YS-Ktv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="50" id="On7-2X-1sf"/>
+                            <constraint firstItem="TGg-YS-Ktv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-50" id="z83-pE-4co"/>
                         </constraints>
                     </view>
                 </viewController>

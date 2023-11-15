@@ -221,8 +221,8 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     // MARK: OTHER MANAGER's FUNCS
     func scanCompleted(completion: @escaping ([CBPeripheral]) -> Void) {
         if manager.state == .poweredOn {
-            self.manager.stopScan() // in case we've already start scaning
-            self.manager.scanForPeripherals(withServices: .none)
+            manager.stopScan() // in case we've already start scaning
+            manager.scanForPeripherals(withServices: .none)
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 if self.manager.state == .poweredOn {
                     self.manager.stopScan()

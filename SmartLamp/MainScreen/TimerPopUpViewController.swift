@@ -11,7 +11,7 @@ import CoreBluetooth
 class TimerPopUpViewController: UIViewController {
     public var device: CBPeripheral?
     private lazy var popUpView: UIView = {
-        let popUp = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 250))
+        let popUp = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         popUp.layer.cornerRadius = 25
         popUp.backgroundColor =
           UIColor { traitCollection in
@@ -103,10 +103,11 @@ class TimerPopUpViewController: UIViewController {
             views.translatesAutoresizingMaskIntoConstraints = false
         }
         NSLayoutConstraint.activate([
-                                     popUpView.topAnchor.constraint(equalTo: view.centerYAnchor),
+                                     popUpView.topAnchor.constraint(equalTo: view.centerYAnchor,
+                                                                    constant: -50),
                                      self.centerConstraint!,
                                      popUpView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * 0.85),
-                                     popUpView.heightAnchor.constraint(equalToConstant: 340),
+                                     popUpView.heightAnchor.constraint(equalToConstant: 370),
                                      
                                      minutesLabel.centerXAnchor.constraint(equalTo: minutesPicker.centerXAnchor),
                                      minutesLabel.topAnchor.constraint(equalTo: popUpView.topAnchor,
@@ -120,7 +121,8 @@ class TimerPopUpViewController: UIViewController {
                                      cyclesLabel.centerXAnchor.constraint(equalTo: cyclesPicker.centerXAnchor),
                                      
                                      
-                                     minutesPicker.centerYAnchor.constraint(equalTo: popUpView.centerYAnchor),
+                                     minutesPicker.centerYAnchor.constraint(equalTo: popUpView.centerYAnchor,
+                                                                           constant: -10),
                                      minutesPicker.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor,
                                                                             constant: 10),
                                      minutesPicker.heightAnchor.constraint(equalTo: popUpView.heightAnchor,
@@ -130,7 +132,8 @@ class TimerPopUpViewController: UIViewController {
                                      
                                      secondsPicker.leadingAnchor.constraint(equalTo: minutesPicker.trailingAnchor,
                                                                             constant: 10),
-                                     secondsPicker.centerYAnchor.constraint(equalTo: popUpView.centerYAnchor),
+                                     secondsPicker.centerYAnchor.constraint(equalTo: popUpView.centerYAnchor,
+                                                                            constant: -10),
                                      secondsPicker.heightAnchor.constraint(equalTo: popUpView.heightAnchor,
                                                                            multiplier: 0.6),
                                      secondsPicker.widthAnchor.constraint(equalTo: popUpView.widthAnchor,
@@ -138,7 +141,8 @@ class TimerPopUpViewController: UIViewController {
                                      
                                      cyclesPicker.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor,
                                                                             constant: -10),
-                                     cyclesPicker.centerYAnchor.constraint(equalTo: popUpView.centerYAnchor),
+                                     cyclesPicker.centerYAnchor.constraint(equalTo: popUpView.centerYAnchor,
+                                                                           constant: -10),
                                      cyclesPicker.heightAnchor.constraint(equalTo: popUpView.heightAnchor,
                                                                           multiplier: 0.6),
                                      cyclesPicker.widthAnchor.constraint(equalTo: popUpView.widthAnchor,
@@ -151,7 +155,7 @@ class TimerPopUpViewController: UIViewController {
                                      backButton.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor,
                                                                           constant: -13),
                                      backButton.heightAnchor.constraint(equalTo: popUpView.widthAnchor,
-                                                                       multiplier: 0.13)
+                                                                       multiplier: 0.15)
                                     ])
     }
     public override func viewDidAppear(_ animated: Bool) {

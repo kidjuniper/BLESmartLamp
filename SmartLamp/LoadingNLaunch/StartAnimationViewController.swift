@@ -90,9 +90,17 @@ final class StartAnimationViewController: UIViewController {
         let mainScreen = CustomTabBarController()
         mainScreen.modalPresentationStyle = .fullScreen
         BLE.sharedInstance.scanCompleted { _ in
+            if !BLE.sharedInstance.list.isEmpty {
             DispatchQueue.main.async {
-                self.present(mainScreen,
-                             animated: true)
+                    self.present(mainScreen,
+                                 animated: true)
+                }
+            }
+            else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.present(mainScreen,
+                                 animated: true)
+                }
             }
         }
     }

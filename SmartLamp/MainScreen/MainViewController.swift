@@ -172,6 +172,9 @@ class MainViewController: UIViewController {
         
     }
     @objc func preheatTimer() {
+        if state == 2 {
+            isResumed = true
+        }
         state = 2
         onButton.removeTarget(self,
                               action: #selector(self.onButtonFunc),
@@ -187,9 +190,11 @@ class MainViewController: UIViewController {
         let data = UserDefaults.standard.dictionary(forKey: "prehetLeft") as! [String : Int]
         let deviceName = "\(device!.identifier)"
         durationTimer = data[deviceName] ?? 0
-        basicAnimationPreheat()
+        if !isResumed {
+            basicAnimationPreheat() 
+            animationCircularPreheat()
+        }
         timerFuncPreheat()
-        animationCircularPreheat()
         timer = Timer.scheduledTimer (timeInterval: 1,
                                       target: self,
                                       selector: #selector (self.timerFuncPreheat),
