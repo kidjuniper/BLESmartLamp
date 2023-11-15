@@ -162,6 +162,7 @@ class MainViewController: UIViewController {
     
     @objc func justOn() {
         state = 1
+        firstOpen = true
         startTimerButton.addTarget(self,
                                    action: #selector(startButtonTapped),
                                    for: .touchUpInside)
@@ -190,10 +191,10 @@ class MainViewController: UIViewController {
         let data = UserDefaults.standard.dictionary(forKey: "prehetLeft") as! [String : Int]
         let deviceName = "\(device!.identifier)"
         durationTimer = data[deviceName] ?? 0
-        if !isResumed {
-            basicAnimationPreheat() 
+//        if !isResumed {
+            basicAnimationPreheat()
             animationCircularPreheat()
-        }
+//        }
         timerFuncPreheat()
         timer = Timer.scheduledTimer (timeInterval: 1,
                                       target: self,
@@ -367,6 +368,9 @@ class MainViewController: UIViewController {
             let offAction = UIAlertAction(title: "Да",
                                           style: .destructive) { _ in
                 self.off()
+                if self.state != 1{
+                    self.dismiss(animated: true)
+                }
             }
             let okAction = UIAlertAction(title: "Отмена",
                                          style: .default)
@@ -516,7 +520,6 @@ extension MainViewController {
     }
     
     func animationCircularPreheat() {
-        
         let center = CGPoint(x: shapeView.frame.width / 2,
                              y: shapeView.frame.height / 2)
         let endAngle = (-CGFloat.pi / 2)
@@ -524,6 +527,8 @@ extension MainViewController {
         let data = UserDefaults.standard.dictionary(forKey: "prehetLeft") as! [String : Int]
         let deviceName = "\(device!.identifier)"
         durationTimerAnimation = Double(data[deviceName] ?? 0)
+        
+        shapeLayer.removeFromSuperlayer()
         
         let startAngle = 2 * CGFloat.pi * CGFloat(1 - durationTimerAnimation/10) + endAngle
         let circularPath = UIBezierPath(arcCenter: center,
