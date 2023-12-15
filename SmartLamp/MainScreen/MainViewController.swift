@@ -144,7 +144,7 @@ class MainViewController: UIViewController {
         startTimerButton.addTarget(self,
                                    action: #selector(startButtonTapped),
                                    for: .touchUpInside)
-        startTimerButton.setAttributedTitle(NSAttributedString(string: "Установить таймер",
+        startTimerButton.setAttributedTitle(NSAttributedString(string: "Таймер",
                                                                attributes: [.font : UIFont(name: "Futura Bold",
                                                                                            size: 15)!]),
                                             for: .normal)
@@ -530,7 +530,7 @@ extension MainViewController {
         
         shapeLayer.removeFromSuperlayer()
         
-        let startAngle = 2 * CGFloat.pi * CGFloat(1 - durationTimerAnimation/10) + endAngle
+        let startAngle = 2 * CGFloat.pi * CGFloat(1 - durationTimerAnimation/60) + endAngle
         let circularPath = UIBezierPath(arcCenter: center,
                                         radius: (shapeView.frame.width - shapeView.frame.width * 0.101) / 2,
                                         startAngle: endAngle,

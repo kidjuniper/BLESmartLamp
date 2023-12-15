@@ -28,38 +28,23 @@ final class StartAnimationViewController: UIViewController {
         super.viewDidLoad()
         appearanceSetting()
         presentMainScreen()
-        if ((UserDefaults.standard.array(forKey: "timeLeft")?.isEmpty) == nil) {
-            let devices: [String : Int] = [:]
-            UserDefaults.standard.set(devices, forKey: "timeLeft")
-        }
-        if ((UserDefaults.standard.array(forKey: "prehetLeft")?.isEmpty) == nil) {
-            let devices: [String : Int] = [:]
-            UserDefaults.standard.set(devices, forKey: "prehetLeft")
-        }
-        if ((UserDefaults.standard.array(forKey: "timeSet")?.isEmpty) == nil) {
-            let devices: [String:Int] = [:]
-            UserDefaults.standard.set(devices, forKey: "timeSet")
-        }
-        if ((UserDefaults.standard.array(forKey: "cyclesSet")?.isEmpty) == nil) {
-            let devices: [String:Int] = [:]
-            UserDefaults.standard.set(devices, forKey: "cyclesSet")
-        }
-        if ((UserDefaults.standard.array(forKey: "currentCycle")?.isEmpty) == nil) {
-            let devices: [String:Int] = [:]
-            UserDefaults.standard.set(devices, forKey: "currentCycle")
-        }
-        if ((UserDefaults.standard.array(forKey: "name")?.isEmpty) == nil) {
-            let devices: [String:String] = [:]
-            UserDefaults.standard.set(devices, forKey: "name")
-        }
         
+        // some UserDefaults checkings
+        ["timeLeft",
+        "prehetLeft",
+        "timeSet",
+        "cyclesSet",
+        "currentCycle",
+        "name"].forEach { key in
+            if ((UserDefaults.standard.array(forKey: key)?.isEmpty) == nil) {
+                let devices: [String : Int] = [:]
+                UserDefaults.standard.set(devices, forKey: key)
+            }
+        }
         if ((UserDefaults.standard.array(forKey: "devices")?.isEmpty) == nil) {
             let devices: [String] = []
             UserDefaults.standard.set(devices,
                                       forKey: "devices")
-        }
-        else {
-            print(UserDefaults.standard.array(forKey: "devices")!)
         }
     }
     
