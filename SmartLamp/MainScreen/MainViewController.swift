@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
         button.layer.cornerRadius = 15
         button.clipsToBounds = true
         button.tintColor = .white
-        button.setAttributedTitle(NSAttributedString(string: "Установить таймер",
+        button.setAttributedTitle(NSAttributedString(string: "Таймер",
                                                      attributes: [.font : UIFont(name: "Futura Bold",
                                                                                  size: 15)!]),
                                   for: .normal)
@@ -191,10 +191,8 @@ class MainViewController: UIViewController {
         let data = UserDefaults.standard.dictionary(forKey: "prehetLeft") as! [String : Int]
         let deviceName = "\(device!.identifier)"
         durationTimer = data[deviceName] ?? 0
-//        if !isResumed {
-            basicAnimationPreheat()
-            animationCircularPreheat()
-//        }
+        basicAnimationPreheat()
+        animationCircularPreheat()
         timerFuncPreheat()
         timer = Timer.scheduledTimer (timeInterval: 1,
                                       target: self,
@@ -232,6 +230,7 @@ class MainViewController: UIViewController {
                                       selector: #selector (self.timerFunc),
                                       userInfo: nil,
                                       repeats: true)
+        startTimerButton.isHidden = false
         self.startTimerButton.setAttributedTitle(NSAttributedString(string: "Пауза",
                                                                     attributes: [.font : UIFont(name: "Futura Bold",
                                                                                                 size: 15)!]),
@@ -261,7 +260,7 @@ class MainViewController: UIViewController {
         isResumed = true
         timerLabel.text = "Пауза"
         timer.invalidate()
-        startTimerButton.setAttributedTitle(NSAttributedString(string: "Продолжить",
+        startTimerButton.setAttributedTitle(NSAttributedString(string: "Пуск",
                                                                attributes: [.font : UIFont(name: "Futura Bold",
                                                                                            size: 15)!]),
                                             for: .normal)
@@ -299,7 +298,7 @@ class MainViewController: UIViewController {
             }
             else {
                 self.shapeLayer.pauseAnimation()
-                self.startTimerButton.setAttributedTitle(NSAttributedString(string: "Продолжить",
+                self.startTimerButton.setAttributedTitle(NSAttributedString(string: "Пуск",
                                                                             attributes: [.font : UIFont(name: "Futura Bold",
                                                                                                         size: 15)!]),
                                                          for: .normal)
@@ -354,10 +353,7 @@ class MainViewController: UIViewController {
             timer.invalidate()
             shapeView.layer.sublayers?.first?.removeFromSuperlayer()
         }
-        startTimerButton.setAttributedTitle(NSAttributedString(string: "Отмена",
-                                                               attributes: [.font : UIFont(name: "Futura Bold",
-                                                                                           size: 15)!]),
-                                            for: .normal)
+        startTimerButton.isHidden = true
     }
     @objc func turnOff() {
         if state != 2 {
@@ -368,9 +364,7 @@ class MainViewController: UIViewController {
             let offAction = UIAlertAction(title: "Да",
                                           style: .destructive) { _ in
                 self.off()
-                if self.state != 1{
-                    self.dismiss(animated: true)
-                }
+                self.dismiss(animated: true)
             }
             let okAction = UIAlertAction(title: "Отмена",
                                          style: .default)
@@ -557,7 +551,7 @@ extension MainViewController {
         let data2 = UserDefaults.standard.dictionary(forKey: "timeSet") as! [String : Int]
         let circleTime = Double(data2[deviceName] ?? 0)
         if durationTimerAnimation != 0 {
-            let startAngle = 2 * CGFloat.pi * CGFloat(1 - (1/circleTime+1) - (durationTimerAnimation)/circleTime) + endAngle
+            let startAngle = 2 * CGFloat.pi * CGFloat(1 - (1 / circleTime + 1) - (durationTimerAnimation)/circleTime) + endAngle
             let circularPath = UIBezierPath(arcCenter: center,
                                             radius: (shapeView.frame.width - shapeView.frame.width * 0.101) / 2,
                                             startAngle: endAngle,

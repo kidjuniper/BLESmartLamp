@@ -61,7 +61,7 @@ class TimerPopUpViewController: UIViewController {
         button.layer.cornerRadius = 12
         button.clipsToBounds = true
         button.tintColor = .white
-        button.setAttributedTitle(NSAttributedString(string: "Установить",
+        button.setAttributedTitle(NSAttributedString(string: "Запустить",
                                                      attributes: [.font : UIFont(name: "Futura Bold",
                                                                                  size: 15)!]),
                                   for: .normal)
@@ -114,7 +114,7 @@ class TimerPopUpViewController: UIViewController {
         secondsPicker.selectRow(4980,
                                 inComponent: 0,
                                 animated: false)
-        minutesPicker.selectRow(4980,
+        minutesPicker.selectRow(4991,
                                 inComponent: 0,
                                 animated: false)
         view.addSubview(downView)
@@ -226,7 +226,7 @@ class TimerPopUpViewController: UIViewController {
     }
     // dismissing + timer activation
     @objc func dismis() {
-        let time = self.minutesPicker.selectedRow(inComponent: 0) % 30 * 1000 * 60 + self.secondsPicker.selectedRow(inComponent: 0) % 60 * 1000
+        let time = self.minutesPicker.selectedRow(inComponent: 0) % 31 * 1000 * 60 + self.secondsPicker.selectedRow(inComponent: 0) % 60 * 1000
         if time == 0 {
             self.zeroTimeAttention()
         }
@@ -262,7 +262,7 @@ extension TimerPopUpViewController: UIPickerViewDelegate, UIPickerViewDataSource
         case cyclesPicker:
             return "\(row % 10 + 1)"
         case minutesPicker:
-            return "\(row % 30)"
+            return "\(row % 31)"
         default:
             return "\(row % 60)"
         }
