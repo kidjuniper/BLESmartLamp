@@ -329,7 +329,7 @@ class MainViewController: UIViewController {
         let data2 = UserDefaults.standard.dictionary(forKey: "currentCycle") as! [String : Int]
         let cc = Double(data2[deviceName] ?? 0)
         timerLabel.text = """
-        Цикл \(Int(cc))/\(Int(cycles))
+        Процедура \(Int(cc))/\(Int(cycles))
         Осталось \(Int(durationTimer/60)) : \(durationTimer%60 > 9 ? "\(durationTimer%60)" : "0\(durationTimer%60)")
         """
         if durationTimer > 0 {
