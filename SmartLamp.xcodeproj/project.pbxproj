@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A46DD28C2AF81D0500710E0A /* LampStateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46DD28B2AF81D0500710E0A /* LampStateDataModel.swift */; };
+		A49119F72B613117006A30BE /* MainViewController+Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49119F62B613117006A30BE /* MainViewController+Observers.swift */; };
+		A49119FB2B614F53006A30BE /* MainViewController+LampStateHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49119FA2B614F53006A30BE /* MainViewController+LampStateHandlers.swift */; };
+		A49119FD2B614FEB006A30BE /* MainViewController+ButtonsAppearanceNFunctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49119FC2B614FEB006A30BE /* MainViewController+ButtonsAppearanceNFunctionality.swift */; };
+		A49119FF2B61505C006A30BE /* MainViewController+LampFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49119FE2B61505C006A30BE /* MainViewController+LampFuncs.swift */; };
+		A4911A012B6150F0006A30BE /* MainViewController+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4911A002B6150F0006A30BE /* MainViewController+Appearance.swift */; };
+		A4911A032B6155BD006A30BE /* MainViewController+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4911A022B6155BD006A30BE /* MainViewController+Animations.swift */; };
 		A493E7192AC3154B00EF087B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E7182AC3154B00EF087B /* AppDelegate.swift */; };
 		A493E71B2AC3154B00EF087B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E71A2AC3154B00EF087B /* SceneDelegate.swift */; };
 		A493E7222AC3154C00EF087B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A493E7212AC3154C00EF087B /* Assets.xcassets */; };
@@ -27,12 +33,23 @@
 		A493E7522AC3648700EF087B /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E7512AC3648700EF087B /* Device.swift */; };
 		A493E7582AC3A04900EF087B /* ConnectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493E7572AC3A04900EF087B /* ConnectionProtocols.swift */; };
 		A49413FD2AFABC66006C7CF5 /* CALayerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49413FC2AFABC66006C7CF5 /* CALayerAnimation.swift */; };
+		A4A205202BB7EE0E00EC1FFD /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A2051F2BB7EE0E00EC1FFD /* DefaultsManager.swift */; };
+		A4A205222BB7FB0400EC1FFD /* ChangeNamePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A205212BB7FB0400EC1FFD /* ChangeNamePopUp.swift */; };
+		A4A205242BB8028B00EC1FFD /* StackArrangedSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A205232BB8028B00EC1FFD /* StackArrangedSV.swift */; };
+		A4A205262BB8042100EC1FFD /* PresentPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A205252BB8042100EC1FFD /* PresentPopUp.swift */; };
+		A4A205282BB81A2600EC1FFD /* MVC + TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A205272BB81A2600EC1FFD /* MVC + TextFieldDelegate.swift */; };
 		A4B055142AF658A100C15603 /* TimerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B055132AF658A100C15603 /* TimerPopUpViewController.swift */; };
 		A4BE3A7A2AF2A7B6007B0777 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE3A792AF2A7B6007B0777 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A46DD28B2AF81D0500710E0A /* LampStateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LampStateDataModel.swift; sourceTree = "<group>"; };
+		A49119F62B613117006A30BE /* MainViewController+Observers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Observers.swift"; sourceTree = "<group>"; };
+		A49119FA2B614F53006A30BE /* MainViewController+LampStateHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+LampStateHandlers.swift"; sourceTree = "<group>"; };
+		A49119FC2B614FEB006A30BE /* MainViewController+ButtonsAppearanceNFunctionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+ButtonsAppearanceNFunctionality.swift"; sourceTree = "<group>"; };
+		A49119FE2B61505C006A30BE /* MainViewController+LampFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+LampFuncs.swift"; sourceTree = "<group>"; };
+		A4911A002B6150F0006A30BE /* MainViewController+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Appearance.swift"; sourceTree = "<group>"; };
+		A4911A022B6155BD006A30BE /* MainViewController+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Animations.swift"; sourceTree = "<group>"; };
 		A493E7152AC3154B00EF087B /* SmartLamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartLamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A493E7182AC3154B00EF087B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A493E71A2AC3154B00EF087B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +71,11 @@
 		A493E7512AC3648700EF087B /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		A493E7572AC3A04900EF087B /* ConnectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionProtocols.swift; sourceTree = "<group>"; };
 		A49413FC2AFABC66006C7CF5 /* CALayerAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerAnimation.swift; sourceTree = "<group>"; };
+		A4A2051F2BB7EE0E00EC1FFD /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
+		A4A205212BB7FB0400EC1FFD /* ChangeNamePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNamePopUp.swift; sourceTree = "<group>"; };
+		A4A205232BB8028B00EC1FFD /* StackArrangedSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackArrangedSV.swift; sourceTree = "<group>"; };
+		A4A205252BB8042100EC1FFD /* PresentPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentPopUp.swift; sourceTree = "<group>"; };
+		A4A205272BB81A2600EC1FFD /* MVC + TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MVC + TextFieldDelegate.swift"; sourceTree = "<group>"; };
 		A4B055132AF658A100C15603 /* TimerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPopUpViewController.swift; sourceTree = "<group>"; };
 		A4BE3A792AF2A7B6007B0777 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +91,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4911A042B615661006A30BE /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE3A792AF2A7B6007B0777 /* MainViewController.swift */,
+				A49119FA2B614F53006A30BE /* MainViewController+LampStateHandlers.swift */,
+				A49119FE2B61505C006A30BE /* MainViewController+LampFuncs.swift */,
+				A4911A022B6155BD006A30BE /* MainViewController+Animations.swift */,
+				A4911A002B6150F0006A30BE /* MainViewController+Appearance.swift */,
+				A49119FC2B614FEB006A30BE /* MainViewController+ButtonsAppearanceNFunctionality.swift */,
+				A49119F62B613117006A30BE /* MainViewController+Observers.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
 		A493E70C2AC3154B00EF087B = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +132,7 @@
 				A493E7492AC35AA400EF087B /* Connection */,
 				A493E7382AC3370000EF087B /* Managing */,
 				A493E7372AC3349A00EF087B /* LoadingNLaunch */,
+				A4A2051E2BB7EDFE00EC1FFD /* Helpers */,
 				A493E7342AC32B5600EF087B /* Extensions */,
 				A493E7262AC3154C00EF087B /* Info.plist */,
 			);
@@ -108,6 +145,8 @@
 				A493E7352AC32B8B00EF087B /* TextAppearance.swift */,
 				A493E7472AC35A0F00EF087B /* ForSets.swift */,
 				A49413FC2AFABC66006C7CF5 /* CALayerAnimation.swift */,
+				A4A205232BB8028B00EC1FFD /* StackArrangedSV.swift */,
+				A4A205252BB8042100EC1FFD /* PresentPopUp.swift */,
 				A493E7212AC3154C00EF087B /* Assets.xcassets */,
 			);
 			path = Extensions;
@@ -136,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				A493E7302AC323CE00EF087B /* ManagingViewController.swift */,
+				A4A205272BB81A2600EC1FFD /* MVC + TextFieldDelegate.swift */,
 				A493E7402AC33E2600EF087B /* ManagingTableFunctions.swift */,
 			);
 			path = Controller;
@@ -154,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				A493E73E2AC337CA00EF087B /* ManagingTableViewCell.swift */,
+				A4A205212BB7FB0400EC1FFD /* ChangeNamePopUp.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,10 +243,18 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		A4A2051E2BB7EDFE00EC1FFD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A4A2051F2BB7EE0E00EC1FFD /* DefaultsManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A4BE3A782AF2A790007B0777 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A4BE3A792AF2A7B6007B0777 /* MainViewController.swift */,
+				A4911A042B615661006A30BE /* MainViewController */,
 				A4B055132AF658A100C15603 /* TimerPopUpViewController.swift */,
 			);
 			path = MainScreen;
@@ -282,7 +331,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A493E7432AC346C000EF087B /* PossibleDevices.swift in Sources */,
+				A49119FF2B61505C006A30BE /* MainViewController+LampFuncs.swift in Sources */,
+				A4A205242BB8028B00EC1FFD /* StackArrangedSV.swift in Sources */,
 				A493E73F2AC337CA00EF087B /* ManagingTableViewCell.swift in Sources */,
+				A4A205222BB7FB0400EC1FFD /* ChangeNamePopUp.swift in Sources */,
 				A493E7482AC35A0F00EF087B /* ForSets.swift in Sources */,
 				A46DD28C2AF81D0500710E0A /* LampStateDataModel.swift in Sources */,
 				A493E7582AC3A04900EF087B /* ConnectionProtocols.swift in Sources */,
@@ -291,16 +343,24 @@
 				A4B055142AF658A100C15603 /* TimerPopUpViewController.swift in Sources */,
 				A493E72F2AC31F3100EF087B /* StartAnimationViewController.swift in Sources */,
 				A493E7332AC323DB00EF087B /* ConnectionViewController.swift in Sources */,
+				A49119FB2B614F53006A30BE /* MainViewController+LampStateHandlers.swift in Sources */,
 				A493E7362AC32B8B00EF087B /* TextAppearance.swift in Sources */,
 				A493E7192AC3154B00EF087B /* AppDelegate.swift in Sources */,
+				A4A205282BB81A2600EC1FFD /* MVC + TextFieldDelegate.swift in Sources */,
+				A4911A032B6155BD006A30BE /* MainViewController+Animations.swift in Sources */,
 				A493E7522AC3648700EF087B /* Device.swift in Sources */,
+				A49119FD2B614FEB006A30BE /* MainViewController+ButtonsAppearanceNFunctionality.swift in Sources */,
 				A493E7412AC33E2600EF087B /* ManagingTableFunctions.swift in Sources */,
 				A493E72D2AC316D600EF087B /* CustomTabBarViewController.swift in Sources */,
 				A493E74E2AC35B0600EF087B /* ConnectionTableViewCell.swift in Sources */,
 				A4BE3A7A2AF2A7B6007B0777 /* MainViewController.swift in Sources */,
 				A49413FD2AFABC66006C7CF5 /* CALayerAnimation.swift in Sources */,
 				A493E7502AC35B6400EF087B /* ConnectionTableFunctions.swift in Sources */,
+				A4911A012B6150F0006A30BE /* MainViewController+Appearance.swift in Sources */,
+				A4A205262BB8042100EC1FFD /* PresentPopUp.swift in Sources */,
 				A493E71B2AC3154B00EF087B /* SceneDelegate.swift in Sources */,
+				A4A205202BB7EE0E00EC1FFD /* DefaultsManager.swift in Sources */,
+				A49119F72B613117006A30BE /* MainViewController+Observers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,12 +514,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = theSun.SmartLamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -488,12 +549,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = theSun.SmartLamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

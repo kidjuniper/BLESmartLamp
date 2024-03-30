@@ -69,6 +69,37 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
                     }
                 }
             }
+            
+            // небольшие костыли для отображения названий с индексами
+            var itemsAliasDict = UserDefaultsManager().fetchObject(type: [String : String].self,
+                                                                   for: .names) ?? [:]
+            print(itemsAliasDict)
+            var add = true
+            var counter = 0
+            for i in itemsAliasDict {
+                if i.value == item.name && i.key != item.identifier.uuidString {
+                    counter += 1
+                }
+                if i.key != item.identifier.uuidString {
+                    add = false
+                }
+            }
+            
+            if counter > 0 {
+                
+                itemsAliasDict.updateValue("\(String(describing: item.name!)) (\(counter - 1))",
+                                           forKey: item.identifier.uuidString)
+                UserDefaultsManager().saveObject(value: itemsAliasDict,
+                                                 for: .names)
+            }
+            
+            else if add {
+                itemsAliasDict.updateValue(item.name ?? "",
+                                           forKey: item.identifier.uuidString)
+                UserDefaultsManager().saveObject(value: itemsAliasDict,
+                                                 for: .names)
+            }
+            
             checkList.insert(PossibleDevice(name: item.name ?? "",
                                             id: 0))
         }
@@ -263,6 +294,11 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     // forget function, useless in this project, but you can implement some functional using it
     func forget(item: CBPeripheral) {
         self.manager.cancelPeripheralConnection(item)
+        var itemsAliasDict = UserDefaultsManager().fetchObject(type: [String : String].self,
+                                                               for: .names) ?? [:]
+        itemsAliasDict.removeValue(forKey: item.identifier.uuidString)
+        UserDefaultsManager().saveObject(value: itemsAliasDict,
+                                         for: .names)
         var newDevicesArray = UserDefaults.standard.array(forKey: "devices") as! [String]
         for i in 0..<(UserDefaults.standard.array(forKey: "devices")?.count ?? 1) {
             if newDevicesArray[i] == "\(item.identifier)" {
@@ -371,4 +407,3 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         }
     }
 }
-

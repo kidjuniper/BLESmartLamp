@@ -11,6 +11,9 @@ import CoreBluetooth
 class ManagingViewController: UIViewController {
     public var connectedDevices: Set<CBPeripheral> = []
     var connectedDevicesArray: [CBPeripheral] = []
+    
+    var popUp: PopUp?
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +36,7 @@ class ManagingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, 
+        NotificationCenter.default.addObserver(self,
                                                selector: #selector(reloadDevices),
                                                name: NSNotification.Name(rawValue: "load"),
                                                object: nil)
@@ -69,4 +72,12 @@ extension ManagingViewController: Forget {
     }
 }
 
+extension ManagingViewController: Rename {
+    func rename(item: CBPeripheral) {
+        popUp = PopUp()
+        popUp?.device = item
+        popUp?.popUpTextField.delegate = self
+        view.presentPopUp(popUp: popUp!)
+    }
+}
 

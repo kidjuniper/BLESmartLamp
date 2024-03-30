@@ -15,3 +15,6 @@ protocol Forget {
 protocol Connecttions {
     func connect(item: CBPeripheral)
 }
+protocol Rename {
+    func rename(item: CBPeripheral)
+}

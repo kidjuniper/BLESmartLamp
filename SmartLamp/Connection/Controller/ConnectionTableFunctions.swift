@@ -27,7 +27,15 @@ extension ConnectionViewController: UITableViewDataSource {
             return ConnectionTableViewCell()
         }
         if possibleDevices.count > indexPath.row {
-            cell.deviceName.text = possibleDevices[indexPath.row].name
+            let itemsAliasDict = UserDefaultsManager().fetchObject(type: [String : String].self,
+                                                                   for: .names) ?? [:]
+            
+            if let a = itemsAliasDict[possibleDevices[indexPath.row].identifier.uuidString] {
+                cell.deviceName.text = a
+            }
+            else {
+                cell.deviceName.text = possibleDevices[indexPath.row].name
+            }
             if possibleDevices[indexPath.row].state == .connected {
                 cell.changeDeviceNameButton.setImage(UIImage(systemName: "checkmark"),
                                                      for: .normal)

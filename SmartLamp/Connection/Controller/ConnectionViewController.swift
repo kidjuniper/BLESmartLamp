@@ -34,7 +34,7 @@ class ConnectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // updating possible devices list every 5 seconds
-        timer = Timer.scheduledTimer(timeInterval: 5,
+        timer = Timer.scheduledTimer(timeInterval: 3,
                                      target: self,
                                      selector: #selector(reloadData),
                                      userInfo: nil,

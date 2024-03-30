@@ -26,8 +26,17 @@ extension ManagingViewController: UITableViewDataSource {
                                                        for: indexPath) as? ManagingTableViewCell else {
             return ManagingTableViewCell()
         }
-        cell.deviceName.text = connectedDevicesArray[indexPath.row].name
+        let itemsAliasDict = UserDefaultsManager().fetchObject(type: [String : String].self,
+                                                               for: .names) ?? [:]
+        
+        if let a = itemsAliasDict[connectedDevicesArray[indexPath.row].identifier.uuidString] {
+            cell.deviceName.text = a
+        }
+        else {
+            cell.deviceName.text = connectedDevicesArray[indexPath.row].name
+        }
         cell.item = connectedDevicesArray[indexPath.row]
+        cell.delegateForRename = self
         return cell
     }
 }
