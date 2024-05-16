@@ -10,5 +10,6 @@ import UIKit
 
 struct PossibleDevice: Hashable {
     let name: String
-    let id: Int
+    let id: UUID
+    var version: String? = "н/д"
 }

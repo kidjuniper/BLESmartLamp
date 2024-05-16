@@ -20,9 +20,11 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     private var doNotConnect: Set<CBPeripheral> = []
     private var statusCBUUID: CBUUID = CBUUID(string: "beb5483e-36e1-4688-b7f5-ea07361b26a8") // status characterisctic id (insert your one)
     private var serviceCDUUID: CBUUID = CBUUID(string: "4fafc201-1fb5-459e-8fcc-c5c9c331914b") // main service id (insert your one)
+    private var versionInfoCBUUID: CBUUID = CBUUID(string: "b3103938-3c4c-4330-8f56-e58c77f4b0bd")
     
     // the main characteristic in my project (you may have more)
-    private var mainCharacteristic: CBCharacteristic?
+    private var mainCharacteristic: [UUID : CBCharacteristic] = [:]
+    private var infoCharacteristic: [UUID : CBCharacteristic] = [:]
     
     // shared instance for simple access from all controllers
     static let sharedInstance = BLE()
@@ -60,7 +62,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     // connection + adding to checklist
     func addToDeviceList(_ item: CBPeripheral) {
         if !(item.name?.isEmpty ?? true) && !checkList.contains(PossibleDevice(name: item.name ?? "",
-                                                                               id: 0)) {
+                                                                               id: item.identifier)) {
             list.insert(item)
             for i in UserDefaults.standard.array(forKey: "devices") as! [String] {
                 if i == "\(item.identifier)" && !doNotConnect.contains(item) {
@@ -69,8 +71,39 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
                     }
                 }
             }
+            
+            // небольшие костыли для отображения названий с индексами
+            var itemsAliasDict = UserDefaultsManager().fetchObject(type: [String : String].self,
+                                                                   for: .names) ?? [:]
+            print(itemsAliasDict)
+            var add = true
+            var counter = 0
+            for i in itemsAliasDict {
+                if i.value == item.name && i.key != item.identifier.uuidString {
+                    counter += 1
+                }
+                if i.key != item.identifier.uuidString {
+                    add = false
+                }
+            }
+            
+            if counter > 0 {
+                
+                itemsAliasDict.updateValue("\(String(describing: item.name!)) (\(counter - 1))",
+                                           forKey: item.identifier.uuidString)
+                UserDefaultsManager().saveObject(value: itemsAliasDict,
+                                                 for: .names)
+            }
+            
+            else if add {
+                itemsAliasDict.updateValue(item.name ?? "",
+                                           forKey: item.identifier.uuidString)
+                UserDefaultsManager().saveObject(value: itemsAliasDict,
+                                                 for: .names)
+            }
+            
             checkList.insert(PossibleDevice(name: item.name ?? "",
-                                            id: 0))
+                                            id: item.identifier))
         }
     }
     
@@ -100,7 +133,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
                         didDisconnectPeripheral peripheral: CBPeripheral,
                         error: Error?) {
         checkList.remove(PossibleDevice(name: peripheral.name ?? "",
-                                        id: 0))
+                                        id: peripheral.identifier))
         connectedDevices.remove(peripheral)
         connectedDevicesArray = connectedDevices.createArray() as! [CBPeripheral]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "lost\(peripheral.identifier)"),
@@ -140,13 +173,23 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral,
                     didUpdateValueFor characteristic: CBCharacteristic,
                     error: Error?) {
-        if characteristic != mainCharacteristic {
-            peripheral.readValue(for: mainCharacteristic!)
+        if characteristic != mainCharacteristic[peripheral.identifier] {
+            if characteristic == infoCharacteristic[peripheral.identifier] {
+                let welcome = try? JSONDecoder().decode(LampVersion.self,
+                                                        from: infoCharacteristic[peripheral.identifier]?.value ?? Data())
+                let peripheralName = "\(peripheral.identifier)"
+                var data = UserDefaults.standard.dictionary(forKey: "versions") as! [String : String]
+                data.updateValue(welcome?.version ?? "н/д",
+                                 forKey: "\(peripheralName)")
+            }
+            else {
+                peripheral.readValue(for: mainCharacteristic[peripheral.identifier]!)
+            }
         }
         else {
             // here we decoding the data from lamp and save it to userDefaults
             let welcome = try? JSONDecoder().decode(Welcome.self,
-                                                    from: mainCharacteristic?.value ?? Data())
+                                                    from: mainCharacteristic[peripheral.identifier]?.value ?? Data())
             let peripheralName = "\(peripheral.identifier)"
             var data = UserDefaults.standard.dictionary(forKey: "timeSet") as! [String : Int]
             data.updateValue(Int((welcome?.timer.cycleTime)! / 1000), 
@@ -212,7 +255,11 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
                     peripheral.setNotifyValue(true, for: characteristic)
                 }
                 if characteristic.uuid == statusCBUUID {
-                    mainCharacteristic = characteristic
+                    mainCharacteristic[peripheral.identifier] = characteristic
+                }
+                if characteristic.uuid == versionInfoCBUUID {
+                    infoCharacteristic[peripheral.identifier] = characteristic
+                    peripheral.readValue(for: characteristic)
                 }
             }
         }
@@ -263,6 +310,11 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     // forget function, useless in this project, but you can implement some functional using it
     func forget(item: CBPeripheral) {
         self.manager.cancelPeripheralConnection(item)
+        var itemsAliasDict = UserDefaultsManager().fetchObject(type: [String : String].self,
+                                                               for: .names) ?? [:]
+        itemsAliasDict.removeValue(forKey: item.identifier.uuidString)
+        UserDefaultsManager().saveObject(value: itemsAliasDict,
+                                         for: .names)
         var newDevicesArray = UserDefaults.standard.array(forKey: "devices") as! [String]
         for i in 0..<(UserDefaults.standard.array(forKey: "devices")?.count ?? 1) {
             if newDevicesArray[i] == "\(item.identifier)" {
@@ -285,14 +337,14 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     // MARK: THE LAMP FUNCS
     func setOnLamp(peripheral: CBPeripheral,
                    complition: @escaping (Bool) -> Void) {
-        if ((mainCharacteristic?.isNotifying) != nil) {
+        if ((mainCharacteristic[peripheral.identifier]?.isNotifying) != nil) {
             let dataString = String("{\"relay\": 1}")
             guard let valueString = dataString.data(using: String.Encoding.utf8) else {
                 complition(false)
                 print("truoble")
                 return
             }
-            peripheral.writeValue(valueString, for: mainCharacteristic! , type:
+            peripheral.writeValue(valueString, for: mainCharacteristic[peripheral.identifier]! , type:
                                     CBCharacteristicWriteType.withResponse)
             print("Value String===>\(valueString.debugDescription)")
             complition(true)
@@ -304,12 +356,12 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     }
     // turn off the lamp
     func setOffLamp(peripheral: CBPeripheral) -> Bool {
-        if ((mainCharacteristic?.isNotifying) != nil) {
+        if ((mainCharacteristic[peripheral.identifier]?.isNotifying) != nil) {
             let dataString = String("{\"relay\": 0}")
             guard let valueString = dataString.data(using: String.Encoding.utf8) else {
                 return false
             }
-            peripheral.writeValue(valueString, for: mainCharacteristic! , type:
+            peripheral.writeValue(valueString, for: mainCharacteristic[peripheral.identifier]! , type:
                                     CBCharacteristicWriteType.withResponse)
             return true
         }
@@ -319,13 +371,13 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
                    time: Int,
                    cycles: Int,
                    complition: @escaping (Bool) -> Void) {
-        if ((mainCharacteristic?.isNotifying) != nil) {
+        if ((mainCharacteristic[peripheral.identifier]?.isNotifying) != nil) {
             let dataString = String(" {\"timer\": { \"action\" : \"set\", \"time\" : \(time), \"cycles\" : \(cycles)}}")
             guard let valueString = dataString.data(using: String.Encoding.utf8) else {
                 complition(false)
                 return
             }
-            peripheral.writeValue(valueString, for: mainCharacteristic! , type:
+            peripheral.writeValue(valueString, for: mainCharacteristic[peripheral.identifier]! , type:
                                     CBCharacteristicWriteType.withResponse)
             complition(true)
         }
@@ -335,13 +387,13 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     }
     func resumeLamp(peripheral: CBPeripheral,
                     complition: @escaping (Bool) -> Void) {
-        if ((mainCharacteristic?.isNotifying) != nil) {
+        if ((mainCharacteristic[peripheral.identifier]?.isNotifying) != nil) {
             let dataString = String("{\"timer\": { \"action\" : \"resume\" }}")
             guard let valueString = dataString.data(using: String.Encoding.utf8) else {
                 complition(false)
                 return
             }
-            peripheral.writeValue(valueString, for: mainCharacteristic! , type:
+            peripheral.writeValue(valueString, for: mainCharacteristic[peripheral.identifier]! , type:
                                     CBCharacteristicWriteType.withResponse)
             complition(true)
         }
@@ -351,13 +403,13 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     }
     func pauseLamp(peripheral: CBPeripheral,
                     complition: @escaping (Bool) -> Void) {
-        if ((mainCharacteristic?.isNotifying) != nil) {
+        if ((mainCharacteristic[peripheral.identifier]?.isNotifying) != nil) {
             let dataString = String("{\"timer\": { \"action\" : \"pause\" }}")
             guard let valueString = dataString.data(using: String.Encoding.utf8) else {
                 complition(false)
                 return
             }
-            peripheral.writeValue(valueString, for: mainCharacteristic! , type:
+            peripheral.writeValue(valueString, for: mainCharacteristic[peripheral.identifier]! , type:
                                     CBCharacteristicWriteType.withResponse)
             complition(true)
         }
@@ -366,9 +418,8 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         }
     }
     func checkState(_ peripheral: CBPeripheral) {
-        if mainCharacteristic != nil {
-            peripheral.readValue(for: mainCharacteristic!)
+        if mainCharacteristic[peripheral.identifier] != nil {
+            peripheral.readValue(for: mainCharacteristic[peripheral.identifier]!)
         }
     }
 }
-

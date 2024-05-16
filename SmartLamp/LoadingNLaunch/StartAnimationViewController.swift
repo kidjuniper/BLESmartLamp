@@ -46,6 +46,12 @@ final class StartAnimationViewController: UIViewController {
             UserDefaults.standard.set(devices,
                                       forKey: "devices")
         }
+        
+        if ((UserDefaults.standard.array(forKey: "versions")?.isEmpty) == nil) {
+            let versions: [String : String] = [:]
+            UserDefaults.standard.set(versions,
+                                      forKey: "versions")
+        }
     }
     
     func appearanceSetting() {

@@ -8,6 +8,7 @@
 import UIKit
 import CoreBluetooth
 
+
 class TimerPopUpViewController: UIViewController {
     public var device: CBPeripheral?
     private lazy var popUpView: UIView = {

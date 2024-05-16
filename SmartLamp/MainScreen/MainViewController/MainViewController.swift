@@ -78,8 +78,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        check()
         addObservers()
+        check()
         setStartedAppearance()
     }
     

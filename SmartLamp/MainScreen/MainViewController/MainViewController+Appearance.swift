@@ -13,7 +13,16 @@ extension MainViewController {
         setConstraints()
         timerLabelAnimation()
         view.backgroundColor = .systemBackground
-        deviceNameLabel.text = device?.name
+        let itemsAliasDict = UserDefaultsManager().fetchObject(type: [String : String].self,
+                                                               for: .names) ?? [:]
+        
+        if let a = itemsAliasDict[device?.identifier.uuidString ?? "sdfsdfsdf"] {
+            deviceNameLabel.text = a
+        }
+        else {
+            deviceNameLabel.text = device?.name
+        }
+        
     }
     
     func setConstraintsActiveDevice() {
