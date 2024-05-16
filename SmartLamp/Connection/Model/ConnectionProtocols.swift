@@ -18,3 +18,7 @@ protocol Connecttions {
 protocol Rename {
     func rename(item: CBPeripheral)
 }
+
+protocol Info {
+    func info(item: CBPeripheral) 
+}

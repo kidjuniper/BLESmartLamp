@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4480AC12BF5361E00C27C9D /* BottomSheetLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4480AC02BF5361E00C27C9D /* BottomSheetLogic.swift */; };
+		A4480AC52BF53EF600C27C9D /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4480AC42BF53EF600C27C9D /* InfoTableViewCell.swift */; };
 		A46DD28C2AF81D0500710E0A /* LampStateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46DD28B2AF81D0500710E0A /* LampStateDataModel.swift */; };
 		A49119F72B613117006A30BE /* MainViewController+Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49119F62B613117006A30BE /* MainViewController+Observers.swift */; };
 		A49119FB2B614F53006A30BE /* MainViewController+LampStateHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49119FA2B614F53006A30BE /* MainViewController+LampStateHandlers.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A4480AC02BF5361E00C27C9D /* BottomSheetLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetLogic.swift; sourceTree = "<group>"; };
+		A4480AC42BF53EF600C27C9D /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		A46DD28B2AF81D0500710E0A /* LampStateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LampStateDataModel.swift; sourceTree = "<group>"; };
 		A49119F62B613117006A30BE /* MainViewController+Observers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Observers.swift"; sourceTree = "<group>"; };
 		A49119FA2B614F53006A30BE /* MainViewController+LampStateHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+LampStateHandlers.swift"; sourceTree = "<group>"; };
@@ -165,20 +169,21 @@
 			isa = PBXGroup;
 			children = (
 				A493E73B2AC3371D00EF087B /* View */,
-				A493E7392AC3370900EF087B /* Controller */,
+				A493E7392AC3370900EF087B /* Controllers */,
 				A493E73A2AC3371100EF087B /* Models */,
 			);
 			path = Managing;
 			sourceTree = "<group>";
 		};
-		A493E7392AC3370900EF087B /* Controller */ = {
+		A493E7392AC3370900EF087B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				A493E7302AC323CE00EF087B /* ManagingViewController.swift */,
 				A4A205272BB81A2600EC1FFD /* MVC + TextFieldDelegate.swift */,
 				A493E7402AC33E2600EF087B /* ManagingTableFunctions.swift */,
+				A4480AC02BF5361E00C27C9D /* BottomSheetLogic.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		A493E73A2AC3371100EF087B /* Models */ = {
@@ -194,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				A493E73E2AC337CA00EF087B /* ManagingTableViewCell.swift */,
+				A4480AC42BF53EF600C27C9D /* InfoTableViewCell.swift */,
 				A4A205212BB7FB0400EC1FFD /* ChangeNamePopUp.swift */,
 			);
 			path = View;
@@ -343,6 +349,7 @@
 				A4B055142AF658A100C15603 /* TimerPopUpViewController.swift in Sources */,
 				A493E72F2AC31F3100EF087B /* StartAnimationViewController.swift in Sources */,
 				A493E7332AC323DB00EF087B /* ConnectionViewController.swift in Sources */,
+				A4480AC12BF5361E00C27C9D /* BottomSheetLogic.swift in Sources */,
 				A49119FB2B614F53006A30BE /* MainViewController+LampStateHandlers.swift in Sources */,
 				A493E7362AC32B8B00EF087B /* TextAppearance.swift in Sources */,
 				A493E7192AC3154B00EF087B /* AppDelegate.swift in Sources */,
@@ -359,6 +366,7 @@
 				A4911A012B6150F0006A30BE /* MainViewController+Appearance.swift in Sources */,
 				A4A205262BB8042100EC1FFD /* PresentPopUp.swift in Sources */,
 				A493E71B2AC3154B00EF087B /* SceneDelegate.swift in Sources */,
+				A4480AC52BF53EF600C27C9D /* InfoTableViewCell.swift in Sources */,
 				A4A205202BB7EE0E00EC1FFD /* DefaultsManager.swift in Sources */,
 				A49119F72B613117006A30BE /* MainViewController+Observers.swift in Sources */,
 			);

@@ -33,3 +33,7 @@ struct TimerL: Codable {
         case cycleTime = "cycle_time"
     }
 }
+
+struct LampVersion: Codable {
+    let version: String
+}
