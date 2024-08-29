@@ -14,4 +14,4 @@
 - The functions of turning on the lamp, turning off and setting the timer with preheating indicaton
 - Circular timer 
 
-now available in AppStore: https://apps.apple.com/ru/app/solnyshvo-connect/id6474322918
+now available in the AppStore: https://apps.apple.com/ru/app/solnyshvo-connect/id6474322918
